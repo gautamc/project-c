@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
+    user.role = 'Guest'
     if user.valid?
       user.save!
       render json: user, status: :created
