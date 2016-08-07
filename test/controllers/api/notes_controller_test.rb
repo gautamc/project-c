@@ -75,20 +75,4 @@ class Api::NotesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  private
-
-  def create_user(email, password)
-    User.create!(
-      email: email,
-      password: password,
-      password_confirmation: password
-    )
-  end
-
-  def login_via_http_basic_auth(username, password)
-    @request.env['HTTP_AUTHORIZATION'] =
-      ActionController::HttpAuthentication::Basic.encode_credentials(
-        username, password
-      )
-  end
 end
