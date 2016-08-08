@@ -15,9 +15,6 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.isAdmin?
     assert_not user.isApprovedUser?
     assert user.isGuest?
-
-    puts user.can?(:list, :users)
-
   end
 
 end

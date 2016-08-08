@@ -15,6 +15,7 @@ gem 'puma', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
+gem "cancan"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

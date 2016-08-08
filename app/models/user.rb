@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  include Concerns::Abilities 
+  ROLES = ['Admin', 'User', 'Guest']
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -9,5 +9,17 @@ class User < ApplicationRecord
 
   has_many :notes
   has_and_belongs_to_many :tickers
+
+  def isAdmin?
+    self.role == 'Admin'
+  end
+
+  def isApprovedUser?
+    self.role == 'User'
+  end
+
+  def isGuest?
+    self.role == 'Guest'
+  end
 
 end

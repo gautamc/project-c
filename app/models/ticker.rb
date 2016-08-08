@@ -1,3 +1,3 @@
 class Ticker < ApplicationRecord
-  has_and_belongs_to_many :tickers
+  has_and_belongs_to_many :users
 end
